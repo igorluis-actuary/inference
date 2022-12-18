@@ -85,9 +85,9 @@ bootstrap_uni <- function(nobs = c(10, 30, 50), B = c(50, 100, 500), theta = c(1
         cat('\n')
         for(k in 1:length(B)){
           cat("Bootstrap sample size:", B[k], '\n')
-          cat("Est.B", B[k], ':', res_est_array[j, k, i],' \n')
-          cat("BIAS Est.B", B[k], ':', res_bias_array[j, k, i],' \n')
-          cat("Sd Est.B", B[k],':', res_sd_array[j, k, i],' \n')
+          cat("Est.B", B[k], ':', res_est_array[j, k+1, i],' \n')
+          cat("BIAS Est.B", B[k], ':', res_bias_array[j, k+1, i],' \n')
+          cat("Sd Est.B", B[k],':', res_sd_array[j, k+1, i],' \n')
           cat('\n')
         }
         cat("####################################################\n")
@@ -98,7 +98,7 @@ bootstrap_uni <- function(nobs = c(10, 30, 50), B = c(50, 100, 500), theta = c(1
   
   # if you want to export the results saving as .txt file
   if(export){
-    name_file_export<- paste0('Simulation results.txt')
+    name_file_export<- paste0('Simulation results uniform.txt')
     file_sink <- file(name_file_export)
     sink(name_file_export, append = T)
     cat('\n')
@@ -118,9 +118,9 @@ bootstrap_uni <- function(nobs = c(10, 30, 50), B = c(50, 100, 500), theta = c(1
         cat('\n')
         for(k in 1:length(B)){
           cat("Bootstrap sample size:", B[k], '\n')
-          cat("Est.B", B[k], ':', res_est_array[j, k, i],' \n')
-          cat("BIAS Est.B", B[k], ':', res_bias_array[j, k, i],' \n')
-          cat("Sd Est.B", B[k],':', res_sd_array[j, k, i],' \n')
+          cat("Est.B", B[k], ':', res_est_array[j, k+1, i],' \n')
+          cat("BIAS Est.B", B[k], ':', res_bias_array[j, k+1, i],' \n')
+          cat("Sd Est.B", B[k],':', res_sd_array[j, k+1, i],' \n')
         }
         cat("####################################################\n")
       }
@@ -139,8 +139,7 @@ bootstrap_uni <- function(nobs = c(10, 30, 50), B = c(50, 100, 500), theta = c(1
   
 }
 
-#Testa aqui, mizera.
 res <- bootstrap_uni(nobs = c(10, 30, 50), B = c(50, 100, 500), theta = c(1, 2), seed = 1987, 
-                     type = 'non-parametric', view_results = F, export = F)
+                     type = 'non-parametric', view_results = F, export = T)
 
 res$res_est_array
