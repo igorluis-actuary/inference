@@ -44,7 +44,7 @@ bootstrap_uni <- function(nobs = c(10, 30, 50), B = c(50, 100, 500), theta = c(1
   #Starts the simulation
   for(i in 1:length(nobs)){
     for(j in 1:length(theta)){
-      x <- rexp(n = nobs[i], rate = theta[j])
+      x <- runif(n = nobs[i], min = 0, max = theta[j])
       n <-length(x)
       est_emv_exp <- max(x)
       sd_emv_exp <- sqrt(((n*theta[j])^2)/(((n-1)^2)*(n-2)))
