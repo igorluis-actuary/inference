@@ -133,3 +133,678 @@ BIAS Est.B 500 : -0.3212016
 Sd Est.B 500 : 0.3251802  
 ####################################################
 
+
+Uniform Distribution 
+
+####################################################
+Sample size: 10 
+####################################################
+
+Results for parameter theta = 1 
+theta: 1 
+Estimate EMV: 2.659669  
+BIAS EMV: -1.659669  
+Standard deviation EMV: 0.3928371  
+
+Bootstrap sample size: 50 
+Est.B 50 : 1.192644  
+BIAS Est.B 50 : -0.1926437  
+Sd Est.B 50 : 0.3060142  
+Bootstrap sample size: 100 
+Est.B 100 : 1.208731  
+BIAS Est.B 100 : -0.2087305  
+Sd Est.B 100 : 0.4370719  
+Bootstrap sample size: 500 
+Est.B 500 : 1.20954  
+BIAS Est.B 500 : -0.2095395  
+Sd Est.B 500 : 0.4136907  
+####################################################
+
+Results for parameter theta = 2 
+theta: 2 
+Estimate EMV: 1.335653  
+BIAS EMV: 0.6643467  
+Standard deviation EMV: 0.7856742  
+
+Bootstrap sample size: 50 
+Est.B 50 : 3.071752  
+BIAS Est.B 50 : -1.071752  
+Sd Est.B 50 : 1.21597  
+Bootstrap sample size: 100 
+Est.B 100 : 3.117026  
+BIAS Est.B 100 : -1.117026  
+Sd Est.B 100 : 1.097085  
+Bootstrap sample size: 500 
+Est.B 500 : 3.060787  
+BIAS Est.B 500 : -1.060787  
+Sd Est.B 500 : 1.009532  
+####################################################
+
+####################################################
+Sample size: 30 
+####################################################
+
+Results for parameter theta = 1 
+theta: 1 
+Estimate EMV: 4.354431  
+BIAS EMV: -3.354431  
+Standard deviation EMV: 0.1954989  
+
+Bootstrap sample size: 50 
+Est.B 50 : 1.05175  
+BIAS Est.B 50 : -0.0517503  
+Sd Est.B 50 : 0.2020061  
+Bootstrap sample size: 100 
+Est.B 100 : 1.039565  
+BIAS Est.B 100 : -0.03956536  
+Sd Est.B 100 : 0.1867746  
+Bootstrap sample size: 500 
+Est.B 500 : 1.097728  
+BIAS Est.B 500 : -0.0977282  
+Sd Est.B 500 : 0.2159466  
+####################################################
+
+Results for parameter theta = 2 
+theta: 2 
+Estimate EMV: 2.12909  
+BIAS EMV: -0.1290898  
+Standard deviation EMV: 0.3909977  
+
+Bootstrap sample size: 50 
+Est.B 50 : 1.942386  
+BIAS Est.B 50 : 0.05761364  
+Sd Est.B 50 : 0.3512174  
+Bootstrap sample size: 100 
+Est.B 100 : 1.992064  
+BIAS Est.B 100 : 0.007936348  
+Sd Est.B 100 : 0.4190047  
+Bootstrap sample size: 500 
+Est.B 500 : 1.99645  
+BIAS Est.B 500 : 0.003549745  
+Sd Est.B 500 : 0.4384686  
+####################################################
+
+####################################################
+Sample size: 50 
+####################################################
+
+Results for parameter theta = 1 
+theta: 1 
+Estimate EMV: 6.022563  
+BIAS EMV: -5.022563  
+Standard deviation EMV: 0.1472832  
+
+Bootstrap sample size: 50 
+Est.B 50 : 1.000744  
+BIAS Est.B 50 : -0.0007439729  
+Sd Est.B 50 : 0.1706238  
+Bootstrap sample size: 100 
+Est.B 100 : 1.000335  
+BIAS Est.B 100 : -0.0003345874  
+Sd Est.B 100 : 0.1436682  
+Bootstrap sample size: 500 
+Est.B 500 : 1.002496  
+BIAS Est.B 500 : -0.002496387  
+Sd Est.B 500 : 0.1765543  
+####################################################
+
+Results for parameter theta = 2 
+theta: 2 
+Estimate EMV: 1.957284  
+BIAS EMV: 0.0427162  
+Standard deviation EMV: 0.2945665  
+
+Bootstrap sample size: 50 
+Est.B 50 : 2.364372  
+BIAS Est.B 50 : -0.3643717  
+Sd Est.B 50 : 0.3535489  
+Bootstrap sample size: 100 
+Est.B 100 : 2.368046  
+BIAS Est.B 100 : -0.3680457  
+Sd Est.B 100 : 0.3314856  
+Bootstrap sample size: 500 
+Est.B 500 : 2.321202  
+BIAS Est.B 500 : -0.3212016  
+Sd Est.B 500 : 0.3251802  
+####################################################
+
+
+Uniform Distribution 
+
+####################################################
+Sample size: 10 
+####################################################
+
+Results for parameter theta = 1 
+theta: 1 
+Estimate EMV: 2.659669  
+BIAS EMV: -1.659669  
+Standard deviation EMV: 0.3928371  
+
+Bootstrap sample size: 50 
+Est.B 50 : 1.192644  
+BIAS Est.B 50 : -0.1926437  
+Sd Est.B 50 : 0.3060142  
+Bootstrap sample size: 100 
+Est.B 100 : 1.208731  
+BIAS Est.B 100 : -0.2087305  
+Sd Est.B 100 : 0.4370719  
+Bootstrap sample size: 500 
+Est.B 500 : 1.20954  
+BIAS Est.B 500 : -0.2095395  
+Sd Est.B 500 : 0.4136907  
+####################################################
+
+Results for parameter theta = 2 
+theta: 2 
+Estimate EMV: 1.335653  
+BIAS EMV: 0.6643467  
+Standard deviation EMV: 0.7856742  
+
+Bootstrap sample size: 50 
+Est.B 50 : 3.071752  
+BIAS Est.B 50 : -1.071752  
+Sd Est.B 50 : 1.21597  
+Bootstrap sample size: 100 
+Est.B 100 : 3.117026  
+BIAS Est.B 100 : -1.117026  
+Sd Est.B 100 : 1.097085  
+Bootstrap sample size: 500 
+Est.B 500 : 3.060787  
+BIAS Est.B 500 : -1.060787  
+Sd Est.B 500 : 1.009532  
+####################################################
+
+####################################################
+Sample size: 30 
+####################################################
+
+Results for parameter theta = 1 
+theta: 1 
+Estimate EMV: 4.354431  
+BIAS EMV: -3.354431  
+Standard deviation EMV: 0.1954989  
+
+Bootstrap sample size: 50 
+Est.B 50 : 1.05175  
+BIAS Est.B 50 : -0.0517503  
+Sd Est.B 50 : 0.2020061  
+Bootstrap sample size: 100 
+Est.B 100 : 1.039565  
+BIAS Est.B 100 : -0.03956536  
+Sd Est.B 100 : 0.1867746  
+Bootstrap sample size: 500 
+Est.B 500 : 1.097728  
+BIAS Est.B 500 : -0.0977282  
+Sd Est.B 500 : 0.2159466  
+####################################################
+
+Results for parameter theta = 2 
+theta: 2 
+Estimate EMV: 2.12909  
+BIAS EMV: -0.1290898  
+Standard deviation EMV: 0.3909977  
+
+Bootstrap sample size: 50 
+Est.B 50 : 1.942386  
+BIAS Est.B 50 : 0.05761364  
+Sd Est.B 50 : 0.3512174  
+Bootstrap sample size: 100 
+Est.B 100 : 1.992064  
+BIAS Est.B 100 : 0.007936348  
+Sd Est.B 100 : 0.4190047  
+Bootstrap sample size: 500 
+Est.B 500 : 1.99645  
+BIAS Est.B 500 : 0.003549745  
+Sd Est.B 500 : 0.4384686  
+####################################################
+
+####################################################
+Sample size: 50 
+####################################################
+
+Results for parameter theta = 1 
+theta: 1 
+Estimate EMV: 6.022563  
+BIAS EMV: -5.022563  
+Standard deviation EMV: 0.1472832  
+
+Bootstrap sample size: 50 
+Est.B 50 : 1.000744  
+BIAS Est.B 50 : -0.0007439729  
+Sd Est.B 50 : 0.1706238  
+Bootstrap sample size: 100 
+Est.B 100 : 1.000335  
+BIAS Est.B 100 : -0.0003345874  
+Sd Est.B 100 : 0.1436682  
+Bootstrap sample size: 500 
+Est.B 500 : 1.002496  
+BIAS Est.B 500 : -0.002496387  
+Sd Est.B 500 : 0.1765543  
+####################################################
+
+Results for parameter theta = 2 
+theta: 2 
+Estimate EMV: 1.957284  
+BIAS EMV: 0.0427162  
+Standard deviation EMV: 0.2945665  
+
+Bootstrap sample size: 50 
+Est.B 50 : 2.364372  
+BIAS Est.B 50 : -0.3643717  
+Sd Est.B 50 : 0.3535489  
+Bootstrap sample size: 100 
+Est.B 100 : 2.368046  
+BIAS Est.B 100 : -0.3680457  
+Sd Est.B 100 : 0.3314856  
+Bootstrap sample size: 500 
+Est.B 500 : 2.321202  
+BIAS Est.B 500 : -0.3212016  
+Sd Est.B 500 : 0.3251802  
+####################################################
+
+
+Uniform Distribution 
+
+####################################################
+Sample size: 10 
+####################################################
+
+Results for parameter theta = 1 
+theta: 1 
+Estimate EMV: 2.659669  
+BIAS EMV: -1.659669  
+Standard deviation EMV: 0.3928371  
+
+Bootstrap sample size: 50 
+Est.B 50 : 2.280883  
+BIAS Est.B 50 : -1.280883  
+Sd Est.B 50 : 0.5396264  
+Bootstrap sample size: 100 
+Est.B 100 : 2.30803  
+BIAS Est.B 100 : -1.30803  
+Sd Est.B 100 : 0.5717603  
+Bootstrap sample size: 500 
+Est.B 500 : 2.31714  
+BIAS Est.B 500 : -1.31714  
+Sd Est.B 500 : 0.5271464  
+####################################################
+
+Results for parameter theta = 2 
+theta: 2 
+Estimate EMV: 1.335653  
+BIAS EMV: 0.6643467  
+Standard deviation EMV: 0.7856742  
+
+Bootstrap sample size: 50 
+Est.B 50 : 1.06131  
+BIAS Est.B 50 : 0.9386902  
+Sd Est.B 50 : 0.4060085  
+Bootstrap sample size: 100 
+Est.B 100 : 1.038821  
+BIAS Est.B 100 : 0.9611795  
+Sd Est.B 100 : 0.4086648  
+Bootstrap sample size: 500 
+Est.B 500 : 1.041074  
+BIAS Est.B 500 : 0.9589263  
+Sd Est.B 500 : 0.4091131  
+####################################################
+
+####################################################
+Sample size: 30 
+####################################################
+
+Results for parameter theta = 1 
+theta: 1 
+Estimate EMV: 4.354431  
+BIAS EMV: -3.354431  
+Standard deviation EMV: 0.1954989  
+
+Bootstrap sample size: 50 
+Est.B 50 : 3.756352  
+BIAS Est.B 50 : -2.756352  
+Sd Est.B 50 : 0.9129817  
+Bootstrap sample size: 100 
+Est.B 100 : 3.915622  
+BIAS Est.B 100 : -2.915622  
+Sd Est.B 100 : 0.7307055  
+Bootstrap sample size: 500 
+Est.B 500 : 3.792955  
+BIAS Est.B 500 : -2.792955  
+Sd Est.B 500 : 0.8151155  
+####################################################
+
+Results for parameter theta = 2 
+theta: 2 
+Estimate EMV: 2.12909  
+BIAS EMV: -0.1290898  
+Standard deviation EMV: 0.3909977  
+
+Bootstrap sample size: 50 
+Est.B 50 : 2.007391  
+BIAS Est.B 50 : -0.007390703  
+Sd Est.B 50 : 0.2555793  
+Bootstrap sample size: 100 
+Est.B 100 : 2.065665  
+BIAS Est.B 100 : -0.0656654  
+Sd Est.B 100 : 0.1424737  
+Bootstrap sample size: 500 
+Est.B 500 : 2.023129  
+BIAS Est.B 500 : -0.02312946  
+Sd Est.B 500 : 0.2130662  
+####################################################
+
+####################################################
+Sample size: 50 
+####################################################
+
+Results for parameter theta = 1 
+theta: 1 
+Estimate EMV: 6.022563  
+BIAS EMV: -5.022563  
+Standard deviation EMV: 0.1472832  
+
+Bootstrap sample size: 50 
+Est.B 50 : 5.203781  
+BIAS Est.B 50 : -4.203781  
+Sd Est.B 50 : 1.122174  
+Bootstrap sample size: 100 
+Est.B 100 : 5.244197  
+BIAS Est.B 100 : -4.244197  
+Sd Est.B 100 : 0.966952  
+Bootstrap sample size: 500 
+Est.B 500 : 5.270058  
+BIAS Est.B 500 : -4.270058  
+Sd Est.B 500 : 1.015162  
+####################################################
+
+Results for parameter theta = 2 
+theta: 2 
+Estimate EMV: 1.957284  
+BIAS EMV: 0.0427162  
+Standard deviation EMV: 0.2945665  
+
+Bootstrap sample size: 50 
+Est.B 50 : 1.855505  
+BIAS Est.B 50 : 0.1444952  
+Sd Est.B 50 : 0.2134726  
+Bootstrap sample size: 100 
+Est.B 100 : 1.821279  
+BIAS Est.B 100 : 0.1787206  
+Sd Est.B 100 : 0.2453552  
+Bootstrap sample size: 500 
+Est.B 500 : 1.830939  
+BIAS Est.B 500 : 0.1690606  
+Sd Est.B 500 : 0.2310502  
+####################################################
+
+
+Uniform Distribution 
+
+####################################################
+Sample size: 10 
+####################################################
+
+Results for parameter theta = 1 
+theta: 1 
+Estimate EMV: 2.659669  
+BIAS EMV: -1.659669  
+Standard deviation EMV: 0.3928371  
+
+Bootstrap sample size: 50 
+Est.B 50 : 2.280883  
+BIAS Est.B 50 : -1.280883  
+Sd Est.B 50 : 0.5396264  
+Bootstrap sample size: 100 
+Est.B 100 : 2.30803  
+BIAS Est.B 100 : -1.30803  
+Sd Est.B 100 : 0.5717603  
+Bootstrap sample size: 500 
+Est.B 500 : 2.31714  
+BIAS Est.B 500 : -1.31714  
+Sd Est.B 500 : 0.5271464  
+####################################################
+
+Results for parameter theta = 2 
+theta: 2 
+Estimate EMV: 1.335653  
+BIAS EMV: 0.6643467  
+Standard deviation EMV: 0.7856742  
+
+Bootstrap sample size: 50 
+Est.B 50 : 1.06131  
+BIAS Est.B 50 : 0.9386902  
+Sd Est.B 50 : 0.4060085  
+Bootstrap sample size: 100 
+Est.B 100 : 1.038821  
+BIAS Est.B 100 : 0.9611795  
+Sd Est.B 100 : 0.4086648  
+Bootstrap sample size: 500 
+Est.B 500 : 1.041074  
+BIAS Est.B 500 : 0.9589263  
+Sd Est.B 500 : 0.4091131  
+####################################################
+
+####################################################
+Sample size: 30 
+####################################################
+
+Results for parameter theta = 1 
+theta: 1 
+Estimate EMV: 4.354431  
+BIAS EMV: -3.354431  
+Standard deviation EMV: 0.1954989  
+
+Bootstrap sample size: 50 
+Est.B 50 : 3.756352  
+BIAS Est.B 50 : -2.756352  
+Sd Est.B 50 : 0.9129817  
+Bootstrap sample size: 100 
+Est.B 100 : 3.915622  
+BIAS Est.B 100 : -2.915622  
+Sd Est.B 100 : 0.7307055  
+Bootstrap sample size: 500 
+Est.B 500 : 3.792955  
+BIAS Est.B 500 : -2.792955  
+Sd Est.B 500 : 0.8151155  
+####################################################
+
+Results for parameter theta = 2 
+theta: 2 
+Estimate EMV: 2.12909  
+BIAS EMV: -0.1290898  
+Standard deviation EMV: 0.3909977  
+
+Bootstrap sample size: 50 
+Est.B 50 : 2.007391  
+BIAS Est.B 50 : -0.007390703  
+Sd Est.B 50 : 0.2555793  
+Bootstrap sample size: 100 
+Est.B 100 : 2.065665  
+BIAS Est.B 100 : -0.0656654  
+Sd Est.B 100 : 0.1424737  
+Bootstrap sample size: 500 
+Est.B 500 : 2.023129  
+BIAS Est.B 500 : -0.02312946  
+Sd Est.B 500 : 0.2130662  
+####################################################
+
+####################################################
+Sample size: 50 
+####################################################
+
+Results for parameter theta = 1 
+theta: 1 
+Estimate EMV: 6.022563  
+BIAS EMV: -5.022563  
+Standard deviation EMV: 0.1472832  
+
+Bootstrap sample size: 50 
+Est.B 50 : 5.203781  
+BIAS Est.B 50 : -4.203781  
+Sd Est.B 50 : 1.122174  
+Bootstrap sample size: 100 
+Est.B 100 : 5.244197  
+BIAS Est.B 100 : -4.244197  
+Sd Est.B 100 : 0.966952  
+Bootstrap sample size: 500 
+Est.B 500 : 5.270058  
+BIAS Est.B 500 : -4.270058  
+Sd Est.B 500 : 1.015162  
+####################################################
+
+Results for parameter theta = 2 
+theta: 2 
+Estimate EMV: 1.957284  
+BIAS EMV: 0.0427162  
+Standard deviation EMV: 0.2945665  
+
+Bootstrap sample size: 50 
+Est.B 50 : 1.855505  
+BIAS Est.B 50 : 0.1444952  
+Sd Est.B 50 : 0.2134726  
+Bootstrap sample size: 100 
+Est.B 100 : 1.821279  
+BIAS Est.B 100 : 0.1787206  
+Sd Est.B 100 : 0.2453552  
+Bootstrap sample size: 500 
+Est.B 500 : 1.830939  
+BIAS Est.B 500 : 0.1690606  
+Sd Est.B 500 : 0.2310502  
+####################################################
+
+
+Uniform Distribution 
+
+####################################################
+Sample size: 10 
+####################################################
+
+Results for parameter theta = 1 
+theta: 1 
+Estimate EMV: 2.659669  
+BIAS EMV: -1.659669  
+Standard deviation EMV: 0.3928371  
+
+Bootstrap sample size: 50 
+Est.B 50 : 2.280883  
+BIAS Est.B 50 : -1.280883  
+Sd Est.B 50 : 0.5396264  
+Bootstrap sample size: 100 
+Est.B 100 : 2.30803  
+BIAS Est.B 100 : -1.30803  
+Sd Est.B 100 : 0.5717603  
+Bootstrap sample size: 500 
+Est.B 500 : 2.31714  
+BIAS Est.B 500 : -1.31714  
+Sd Est.B 500 : 0.5271464  
+####################################################
+
+Results for parameter theta = 2 
+theta: 2 
+Estimate EMV: 1.335653  
+BIAS EMV: 0.6643467  
+Standard deviation EMV: 0.7856742  
+
+Bootstrap sample size: 50 
+Est.B 50 : 1.06131  
+BIAS Est.B 50 : 0.9386902  
+Sd Est.B 50 : 0.4060085  
+Bootstrap sample size: 100 
+Est.B 100 : 1.038821  
+BIAS Est.B 100 : 0.9611795  
+Sd Est.B 100 : 0.4086648  
+Bootstrap sample size: 500 
+Est.B 500 : 1.041074  
+BIAS Est.B 500 : 0.9589263  
+Sd Est.B 500 : 0.4091131  
+####################################################
+
+####################################################
+Sample size: 30 
+####################################################
+
+Results for parameter theta = 1 
+theta: 1 
+Estimate EMV: 4.354431  
+BIAS EMV: -3.354431  
+Standard deviation EMV: 0.1954989  
+
+Bootstrap sample size: 50 
+Est.B 50 : 3.756352  
+BIAS Est.B 50 : -2.756352  
+Sd Est.B 50 : 0.9129817  
+Bootstrap sample size: 100 
+Est.B 100 : 3.915622  
+BIAS Est.B 100 : -2.915622  
+Sd Est.B 100 : 0.7307055  
+Bootstrap sample size: 500 
+Est.B 500 : 3.792955  
+BIAS Est.B 500 : -2.792955  
+Sd Est.B 500 : 0.8151155  
+####################################################
+
+Results for parameter theta = 2 
+theta: 2 
+Estimate EMV: 2.12909  
+BIAS EMV: -0.1290898  
+Standard deviation EMV: 0.3909977  
+
+Bootstrap sample size: 50 
+Est.B 50 : 2.007391  
+BIAS Est.B 50 : -0.007390703  
+Sd Est.B 50 : 0.2555793  
+Bootstrap sample size: 100 
+Est.B 100 : 2.065665  
+BIAS Est.B 100 : -0.0656654  
+Sd Est.B 100 : 0.1424737  
+Bootstrap sample size: 500 
+Est.B 500 : 2.023129  
+BIAS Est.B 500 : -0.02312946  
+Sd Est.B 500 : 0.2130662  
+####################################################
+
+####################################################
+Sample size: 50 
+####################################################
+
+Results for parameter theta = 1 
+theta: 1 
+Estimate EMV: 6.022563  
+BIAS EMV: -5.022563  
+Standard deviation EMV: 0.1472832  
+
+Bootstrap sample size: 50 
+Est.B 50 : 5.203781  
+BIAS Est.B 50 : -4.203781  
+Sd Est.B 50 : 1.122174  
+Bootstrap sample size: 100 
+Est.B 100 : 5.244197  
+BIAS Est.B 100 : -4.244197  
+Sd Est.B 100 : 0.966952  
+Bootstrap sample size: 500 
+Est.B 500 : 5.270058  
+BIAS Est.B 500 : -4.270058  
+Sd Est.B 500 : 1.015162  
+####################################################
+
+Results for parameter theta = 2 
+theta: 2 
+Estimate EMV: 1.957284  
+BIAS EMV: 0.0427162  
+Standard deviation EMV: 0.2945665  
+
+Bootstrap sample size: 50 
+Est.B 50 : 1.855505  
+BIAS Est.B 50 : 0.1444952  
+Sd Est.B 50 : 0.2134726  
+Bootstrap sample size: 100 
+Est.B 100 : 1.821279  
+BIAS Est.B 100 : 0.1787206  
+Sd Est.B 100 : 0.2453552  
+Bootstrap sample size: 500 
+Est.B 500 : 1.830939  
+BIAS Est.B 500 : 0.1690606  
+Sd Est.B 500 : 0.2310502  
+####################################################
+
