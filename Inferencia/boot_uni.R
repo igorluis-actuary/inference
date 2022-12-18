@@ -55,7 +55,7 @@ bootstrap_uni <- function(nobs = c(10, 30, 50), B = c(50, 100, 500), theta = c(1
         vec_est_B <- numeric(B[k])
         for(l in 1:B[k]){
           resample_x <- sample(x, replace = T)
-          vec_est_B[l] <- 1/mean(resample_x)
+          vec_est_B[l] <- max(resample_x)
         }
         res_est_b_list_full[[j]][[k]][,i] <- vec_est_B
         res_est_array[j, k+1, i] <- mean(vec_est_B)
@@ -142,4 +142,114 @@ bootstrap_uni <- function(nobs = c(10, 30, 50), B = c(50, 100, 500), theta = c(1
 res <- bootstrap_uni(nobs = c(10, 30, 50), B = c(50, 100, 500), theta = c(1, 2), seed = 1987, 
                      type = 'non-parametric', view_results = F, export = T)
 
-res$res_est_array
+##########################################
+####### SECTION FOR THE GRAPHICS #########
+##########################################
+
+library(tidyverse)
+theta<-res$theta
+B<-res$B
+nobs<-res$nobs
+
+# Graphics of distributions of the estimatives for theta = 1
+par(mfrow = c(3,3))
+for(j in 1:length(B)){
+  for(k in 1:length(nobs)){
+    hist(res$res_est_b_list_full[[1]][[j]][,k], freq = F,
+         main = paste0('Theta = ', theta[1],' | B = ', B[j], ' | N = ', nobs[k]), 
+         xlab = NULL)
+  }
+}
+
+# Graphics of distributions of the estimatives for theta = 0.5
+par(mfrow = c(3,3))
+for(j in 1:length(B)){
+  for(k in 1:length(nobs)){
+    hist(res$res_est_b_list_full[[2]][[j]][,k], freq = F,
+         main = paste0('Theta = ', theta[2],' | B = ', B[j], ' | N = ', nobs[k]), 
+         xlab = NULL)
+  }
+}
+
+par(mfrow = c(2,3))
+seed = 1987
+set.seed(seed)
+# Nobs = 10 and Theta = 1
+x <- runif(n = 10, min = 0, max = 1)
+x2 <- seq(min(x), max(x), length = length(x))
+hist(x, prob = T,  main = paste0('N = 10 | Theta = ', theta[1]), col = "gray", xlab = '')
+lines(x2, dunif(x2, min = 0, max = res$res_est_array[1,1,1]), col = 1, lty = 1, lwd = 1)
+lines(x2, dunif(x2, min = 0, max = res$res_est_array[1,2,1]), col = 2, lty = 2, lwd = 1)
+lines(x2, dunif(x2, min = 0, max = res$res_est_array[1,3,1]), col = 3, lty = 3, lwd = 1)
+lines(x2, dunif(x2, min = 0, max = res$res_est_array[1,4,1]), col = 4, lty = 4, lwd = 1)
+legend('topright', cex= 0.6, lty = c(1:4), col= c(1:4),
+       legend=c("EMV", "EMV B = 100", "EMV B = 300", "EMV B = 500"),
+       box.lty=0)
+
+
+set.seed(seed)
+# Nobs = 30 and Theta = 1
+x <- runif(n = 30, min = 0, max = 1)
+x2 <- seq(min(x), max(x), length = length(x))
+hist(x, prob = T,  main = paste0('N = 30 | Theta = ', theta[1]), col = "gray", xlab = '')
+lines(x2, dunif(x2, min = 0, max = res$res_est_array[1,1,2]), col = 1, lty = 1, lwd = 1)
+lines(x2, dunif(x2, min = 0, max = res$res_est_array[1,2,2]), col = 2, lty = 2, lwd = 1)
+lines(x2, dunif(x2, min = 0, max = res$res_est_array[1,3,2]), col = 3, lty = 3, lwd = 1)
+lines(x2, dunif(x2, min = 0, max = res$res_est_array[1,4,2]), col = 4, lty = 4, lwd = 1)
+legend('topright', cex= 0.6, lty = c(1:4), col= c(1:4),
+       legend=c("EMV", "EMV B = 100", "EMV B = 300", "EMV B = 500"),
+       box.lty=0)
+
+set.seed(seed)
+# Nobs = 50 and Theta = 1
+x <- runif(n = 50, min = 0, max = 1)
+x2 <- seq(min(x), max(x), length = length(x))
+hist(x, prob = T,  main = paste0('N = 50 | Theta = ', theta[1]), col = "gray", xlab = '')
+lines(x2, dunif(x2, min = 0, max = res$res_est_array[1,1,3]), col = 1, lty = 1, lwd = 1)
+lines(x2, dunif(x2, min = 0, max = res$res_est_array[1,2,3]), col = 2, lty = 2, lwd = 1)
+lines(x2, dunif(x2, min = 0, max = res$res_est_array[1,3,3]), col = 3, lty = 3, lwd = 1)
+lines(x2, dunif(x2, min = 0, max = res$res_est_array[1,4,3]), col = 4, lty = 4, lwd = 1)
+legend('topright', cex= 0.6, lty = c(1:4), col= c(1:4),
+       legend=c("EMV", "EMV B = 100", "EMV B = 300", "EMV B = 500"),
+       box.lty=0)
+
+####
+set.seed(seed)
+# Nobs = 10 and Theta = 2
+x <- runif(n = 10, min = 0, max = 2)
+x2 <- seq(min(x), max(x), length = length(x))
+hist(x, prob = T,  main = paste0('N = 10 | Theta = ', theta[2]), col = "gray", xlab = '')
+lines(x2, dunif(x2, min = 0, max = res$res_est_array[2,1,1]), col = 1, lty = 1, lwd = 1)
+lines(x2, dunif(x2, min = 0, max = res$res_est_array[2,2,1]), col = 2, lty = 2, lwd = 1)
+lines(x2, dunif(x2, min = 0, max = res$res_est_array[2,3,1]), col = 3, lty = 3, lwd = 1)
+lines(x2, dunif(x2, min = 0, max = res$res_est_array[2,4,1]), col = 4, lty = 4, lwd = 1)
+legend('topright', cex= 0.6, lty = c(1:4), col= c(1:4),
+       legend=c("EMV", "EMV B = 100", "EMV B = 300", "EMV B = 500"),
+       box.lty=0)
+
+set.seed(seed)
+# Nobs = 30 and Theta = 2
+x <- runif(n = 30, min = 0, max = 2)
+x2 <- seq(min(x), max(x), length = length(x))
+hist(x, prob = T,  main = paste0('N = 30 | Theta = ', theta[2]), col = "gray", xlab = '')
+lines(x2, dunif(x2, min = 0, max = res$res_est_array[2,1,2]), col = 1, lty = 1, lwd = 1)
+lines(x2, dunif(x2, min = 0, max = res$res_est_array[2,2,2]), col = 2, lty = 2, lwd = 1)
+lines(x2, dunif(x2, min = 0, max = res$res_est_array[2,3,2]), col = 3, lty = 3, lwd = 1)
+lines(x2, dunif(x2, min = 0, max = res$res_est_array[2,4,2]), col = 4, lty = 4, lwd = 1)
+legend('topright', cex= 0.6, lty = c(1:4), col= c(1:4),
+       legend=c("EMV", "EMV B = 100", "EMV B = 300", "EMV B = 500"),
+       box.lty=0)
+
+set.seed(seed)
+# Nobs = 50 and Theta = 2
+x <- runif(n = 50, min = 0, max = 2)
+x2 <- seq(min(x), max(x), length = length(x))
+hist(x, prob = T,  main = paste0('N = 50 | Theta = ', theta[2]), col = "gray", xlab = '')
+lines(x2, dunif(x2, min = 0, max = res$res_est_array[2,1,3]), col = 1, lty = 1, lwd = 1)
+lines(x2, dunif(x2, min = 0, max = res$res_est_array[2,2,3]), col = 2, lty = 2, lwd = 1)
+lines(x2, dunif(x2, min = 0, max = res$res_est_array[2,3,3]), col = 3, lty = 3, lwd = 1)
+lines(x2, dunif(x2, min = 0, max = res$res_est_array[2,4,3]), col = 4, lty = 4, lwd = 1)
+legend('topright', cex= 0.6, lty = c(1:4), col= c(1:4),
+       legend=c("EMV", "EMV B = 100", "EMV B = 300", "EMV B = 500"),
+       box.lty=0)
+
