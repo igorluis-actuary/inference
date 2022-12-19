@@ -46,11 +46,11 @@ bootstrap_uni <- function(nobs = c(10, 30, 50), B = c(50, 100, 500), theta = c(1
     for(j in 1:length(theta)){
       x <- runif(n = nobs[i], min = 0, max = theta[j])
       n <-length(x)
-      est_emv_exp <- max(x)
-      sd_emv_exp <- sqrt(((n*theta[j])^2)/(((n-1)^2)*(n-2)))
-      res_est_array[j, 1, i] <- est_emv_exp
-      res_bias_array[j, 1, i] <- theta[j] - est_emv_exp
-      res_sd_array[j, 1, i] <- sd_emv_exp
+      est_emv_uni <- max(x)
+      sd_emv_uni <- sqrt(((n*theta[j])^2)/(((n+1)^2)*(n+2)))
+      res_est_array[j, 1, i] <- est_emv_uni
+      res_bias_array[j, 1, i] <- theta[j] - est_emv_uni
+      res_sd_array[j, 1, i] <- sd_emv_uni
       for(k in 1:length(B)){
         vec_est_B <- numeric(B[k])
         for(l in 1:B[k]){
