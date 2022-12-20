@@ -1,10 +1,10 @@
 #General Function
-bootstrap_exp <- function(nobs = c(10, 30, 50), B = c(50, 100, 500), beta = c(1, 0.5), seed = 123, 
+bootstrap_exp <- function(nobs = c(10, 30, 50), B = c(50, 100, 500), beta = c(1, 0.5), seed = 1987, 
                           type = 'non-parametric', view_results = T, export = T){
   
   if(!is.numeric(B) | !is.numeric(nobs) | !is.numeric(beta) |
      !is.numeric(seed) |!is.logical(view_results) |
-     !is.logical(export)){
+     !is.logical(export) | (length(which(type == c('non-parametric', 'parametric')))==0 | length(type) > 1)){
     stop('Some arguments entered in the function are wrong. Follow the instructions: \n
      * "nobs" -> These are the sample sizes that will be evaluated in the simulations, it must be a numerical vector.\n
      * "B" -> Represents the number of bootstrap sample size, must be a numeric argument.\n
@@ -13,7 +13,7 @@ bootstrap_exp <- function(nobs = c(10, 30, 50), B = c(50, 100, 500), beta = c(1,
      * "export" -> Whether to save the results in .txt file.\n')
   }
   
-  set.seed(seed)
+  if(!require(MASS)){install.packages('MASS')}
   
   res_est_b_list <- list()
   res_est_b_list_full<-list()
@@ -45,8 +45,9 @@ bootstrap_exp <- function(nobs = c(10, 30, 50), B = c(50, 100, 500), beta = c(1,
   #Starts the simulation
   for(i in 1:length(nobs)){
     for(j in 1:length(beta)){
+      set.seed(seed)
       x <- rexp(n = nobs[i], rate = beta[j])
-      n <-length(x)
+      n <- length(x)
       est_emv_exp <- 1/mean(x)
       sd_emv_exp <- sqrt(((n*beta[j])^2)/(((n-1)^2)*(n-2)))
       res_est_array[j, 1, i] <- est_emv_exp
@@ -55,14 +56,18 @@ bootstrap_exp <- function(nobs = c(10, 30, 50), B = c(50, 100, 500), beta = c(1,
       for(k in 1:length(B)){
         vec_est_B <- numeric(B[k])
         for(l in 1:B[k]){
-          resample_x <- sample(x, replace = T)
+          if(type == 'non-parametric'){
+            resample_x <- sample(x, replace = T)
+           }else{
+            est_x <- fitdistr(x, dexp, list(rate = 0.1), lower = c(0.001))
+            resample_x <- rexp(length(x), rate = est_x$estimate)
+          }
           vec_est_B[l] <- 1/mean(resample_x)
         }
         res_est_b_list_full[[j]][[k]][,i] <- vec_est_B
         res_est_array[j, k+1, i] <- mean(vec_est_B)
         res_bias_array[j, k+1, i] <- beta[j] - mean(vec_est_B)
         res_sd_array[j, k+1, i] <-  sd(vec_est_B)
-        
       }    
     }
   }
@@ -71,6 +76,8 @@ bootstrap_exp <- function(nobs = c(10, 30, 50), B = c(50, 100, 500), beta = c(1,
   if(view_results){
     cat('\n')
     cat("Exponential Distribution \n")
+    cat('\n')
+    cat(type)
     cat('\n')
     for(i in 1:length(nobs)){
       cat("####################################################\n")
@@ -99,11 +106,13 @@ bootstrap_exp <- function(nobs = c(10, 30, 50), B = c(50, 100, 500), beta = c(1,
   
   # if you want to export the results saving as .txt file
   if(export){
-    name_file_export<- paste0('Simulation results exponential.txt')
+    name_file_export <- paste0('Simulation results exponential', ' - ', type, '.txt')
     file_sink <- file(name_file_export)
     sink(name_file_export, append = T)
     cat('\n')
     cat("Exponential Distribution \n")
+    cat('\n')
+    cat(type)
     cat('\n')
     for(i in 1:length(nobs)){
       cat("####################################################\n")
@@ -140,8 +149,13 @@ bootstrap_exp <- function(nobs = c(10, 30, 50), B = c(50, 100, 500), beta = c(1,
   
 }
 
-res <- bootstrap_exp(nobs = c(10, 30, 50), B = c(50, 100, 500), beta = c(1, 0.5), seed = 1987, 
-                 type = 'non-parametric', view_results = F, export = T)
+#set.seed(1987)
+res <- bootstrap_exp(nobs = c(10, 30, 50), B = c(50, 100, 500), beta = c(0.5,1.0), seed = 1987, 
+                 type = 'non-parametric', view_results = F, export = F)
+
+res$res_est_array
+
+
 
 
 ##########################################
@@ -184,7 +198,7 @@ lines(x2, dexp(x2, rate = res$res_est_array[1,1,1]), col = 1, lty = 1, lwd = 1)
 lines(x2, dexp(x2, rate = res$res_est_array[1,2,1]), col = 2, lty = 2, lwd = 1)
 lines(x2, dexp(x2, rate = res$res_est_array[1,3,1]), col = 3, lty = 3, lwd = 1)
 lines(x2, dexp(x2, rate = res$res_est_array[1,4,1]), col = 4, lty = 4, lwd = 1)
-legend('topright', cex= 0.6, lty = c(1:4), col= c(1:4),
+legend('topright', 1, cex= 1.5, lty = c(1:4), col= c(1:4),
        legend=c("EMV", "EMV B = 100", "EMV B = 300", "EMV B = 500"),
        box.lty=0)
 
@@ -198,7 +212,7 @@ lines(x2, dexp(x2, rate = res$res_est_array[1,1,2]), col = 1, lty = 1, lwd = 1)
 lines(x2, dexp(x2, rate = res$res_est_array[1,2,2]), col = 2, lty = 2, lwd = 1)
 lines(x2, dexp(x2, rate = res$res_est_array[1,3,2]), col = 3, lty = 3, lwd = 1)
 lines(x2, dexp(x2, rate = res$res_est_array[1,4,2]), col = 4, lty = 4, lwd = 1)
-legend('topright', cex= 0.6, lty = c(1:4), col= c(1:4),
+legend('topright', cex= 1.5, lty = c(1:4), col= c(1:4),
        legend=c("EMV", "EMV B = 100", "EMV B = 300", "EMV B = 500"),
        box.lty=0)
 
@@ -211,7 +225,7 @@ lines(x2, dexp(x2, rate = res$res_est_array[1,1,3]), col = 1, lty = 1, lwd = 1)
 lines(x2, dexp(x2, rate = res$res_est_array[1,2,3]), col = 2, lty = 2, lwd = 1)
 lines(x2, dexp(x2, rate = res$res_est_array[1,3,3]), col = 3, lty = 3, lwd = 1)
 lines(x2, dexp(x2, rate = res$res_est_array[1,4,3]), col = 4, lty = 4, lwd = 1)
-legend('topright', cex= 0.6, lty = c(1:4), col= c(1:4),
+legend('topright', cex= 1.5, lty = c(1:4), col= c(1:4),
        legend=c("EMV", "EMV B = 100", "EMV B = 300", "EMV B = 500"),
        box.lty=0)
 
@@ -225,7 +239,7 @@ lines(x2, dexp(x2, rate = res$res_est_array[2,1,1]), col = 1, lty = 1, lwd = 1)
 lines(x2, dexp(x2, rate = res$res_est_array[2,2,1]), col = 2, lty = 2, lwd = 1)
 lines(x2, dexp(x2, rate = res$res_est_array[2,3,1]), col = 3, lty = 3, lwd = 1)
 lines(x2, dexp(x2, rate = res$res_est_array[2,4,1]), col = 4, lty = 4, lwd = 1)
-legend('topright', cex= 0.6, lty = c(1:4), col= c(1:4),
+legend('topright', cex= 1.5, lty = c(1:4), col= c(1:4),
        legend=c("EMV", "EMV B = 100", "EMV B = 300", "EMV B = 500"),
        box.lty=0)
 
@@ -238,7 +252,7 @@ lines(x2, dexp(x2, rate = res$res_est_array[2,1,2]), col = 1, lty = 1, lwd = 1)
 lines(x2, dexp(x2, rate = res$res_est_array[2,2,2]), col = 2, lty = 2, lwd = 1)
 lines(x2, dexp(x2, rate = res$res_est_array[2,3,2]), col = 3, lty = 3, lwd = 1)
 lines(x2, dexp(x2, rate = res$res_est_array[2,4,2]), col = 4, lty = 4, lwd = 1)
-legend('topright', cex= 0.6, lty = c(1:4), col= c(1:4),
+legend('topright', cex= 1.5, lty = c(1:4), col= c(1:4),
        legend=c("EMV", "EMV B = 100", "EMV B = 300", "EMV B = 500"),
        box.lty=0)
 
@@ -251,7 +265,7 @@ lines(x2, dexp(x2, rate = res$res_est_array[2,1,3]), col = 1, lty = 1, lwd = 1)
 lines(x2, dexp(x2, rate = res$res_est_array[2,2,3]), col = 2, lty = 2, lwd = 1)
 lines(x2, dexp(x2, rate = res$res_est_array[2,3,3]), col = 3, lty = 3, lwd = 1)
 lines(x2, dexp(x2, rate = res$res_est_array[2,4,3]), col = 4, lty = 4, lwd = 1)
-legend('topright', cex= 0.6, lty = c(1:4), col= c(1:4),
+legend('topright', cex= 1.5, lty = c(1:4), col= c(1:4),
        legend=c("EMV", "EMV B = 100", "EMV B = 300", "EMV B = 500"),
        box.lty=0)
 
